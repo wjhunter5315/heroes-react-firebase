@@ -27,6 +27,7 @@ function Main() {
                   <button onClick={() => handleEdit(hero.id)}>edit</button>
                   <button onClick={() => handleDelete(hero.id)}>delete</button>
                   {hero.name} - {hero.alias} - {hero.team}
+                  <button>view</button>
                </li>
             ))}
          </ul>
