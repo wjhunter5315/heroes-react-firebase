@@ -1,8 +1,8 @@
+import "./Main.css";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { handleNew, handleEdit, handleDelete, handleAvengers, handleXmen, handleDefenders } from "../../utils";
+import { handleNew, handleEdit, handleDelete } from "../../utils";
 import db from "../../firebase";
-import { Link } from "react-router-dom";
 
 function Main() {
    const [heroes, setHeroes] = useState([{ name: "Loading...", id: "initial"}]);
@@ -19,8 +19,7 @@ function Main() {
    }, []);
 
    return (
-      <div>
-         <Link to="/">Back</Link>
+      <div className="main">
          <button onClick={handleNew}>New</button>
          <ul>
             {heroes.map((hero) => (
@@ -31,11 +30,6 @@ function Main() {
                </li>
             ))}
          </ul>
-         <div>
-            <button onClick={handleAvengers}>Avengers</button>
-            <button onClick={handleXmen}>X-Men</button>
-            <button onClick={handleDefenders}>Defenders</button>
-         </div>
       </div>
    )
 };

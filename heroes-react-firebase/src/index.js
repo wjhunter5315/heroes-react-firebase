@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
 import Main from './Pages/Main/Main';
 import Avengers from './Pages/Avengers/Avengers';
 import XMen from './Pages/XMen/XMen';
@@ -12,6 +13,8 @@ import Defenders from './Pages/Defenders/Defenders';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Navbar />
+    <div>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
@@ -21,6 +24,7 @@ root.render(
         <Route path="defenders" element={<Defenders />} />
       </Routes>
     </BrowserRouter>
+    </div>
   </React.StrictMode>
 );
 

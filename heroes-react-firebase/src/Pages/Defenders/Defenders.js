@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import db from "../../firebase";
-import { Link } from "react-router-dom";
 
 function Defenders() {
    const [heroes, setHeroes] = useState([{ name: "Loading...", id: "initial"}]);
@@ -19,7 +18,6 @@ function Defenders() {
    
    return (
       <div>
-         <Link to="/">Back</Link>
          <ul>
             {heroes.map((hero) => (
                <li key={hero.id}>
