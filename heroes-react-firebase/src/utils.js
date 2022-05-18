@@ -88,3 +88,8 @@ export const handleDefenders = async () => {
    };
    console.log(listDefenders);
 };
+
+export const handleInfo = async (id) => {
+   const docRef = doc(db, "heroes", id);
+   console.log("Hero ID : " + docRef.id);
+};

@@ -5,6 +5,7 @@ import Main from './Pages/Main/Main';
 import Avengers from './Pages/Avengers/Avengers';
 import XMen from './Pages/XMen/XMen';
 import Defenders from './Pages/Defenders/Defenders';
+import Hero from './Pages/Hero/Hero';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="avengers" element={<Avengers />} />
           <Route path="xmen" element={<XMen />} />
           <Route path="defenders" element={<Defenders />} />
+          <Route path=":id" element={<Hero />} />
       </Routes>
     </BrowserRouter>
     </div>

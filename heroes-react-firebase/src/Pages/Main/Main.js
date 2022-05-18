@@ -1,7 +1,8 @@
 import "./Main.css";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { handleNew, handleEdit, handleDelete } from "../../utils";
+import { Link } from "react-router-dom";
+import { handleNew, handleEdit, handleDelete, handleInfo } from "../../utils";
 import db from "../../firebase";
 
 function Main() {
@@ -27,7 +28,9 @@ function Main() {
                   <button onClick={() => handleEdit(hero.id)}>edit</button>
                   <button onClick={() => handleDelete(hero.id)}>delete</button>
                   {hero.name} - {hero.alias} - {hero.team}
-                  <button>view</button>
+                  <button onClick={() => handleInfo(hero.id)}>
+                     <Link to={"/" + hero.id}>view</Link>
+                  </button>
                </li>
             ))}
          </ul>
